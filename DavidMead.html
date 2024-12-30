@@ -38,7 +38,7 @@
         }
 
         .site-top-margin{
-            margin-top: 15vh;
+            padding-top: 20vh;
         }
 
         .name-header{
@@ -53,6 +53,7 @@
             background-color: #f8f8f8;
             padding-top: 2vh;
             padding-bottom: 2vh;
+            z-index: 1000;
         }
 
 
@@ -87,38 +88,57 @@
             height: fit-content;
         }
 
+        .hover-grow:hover {
+            scale: 1.1;
+            transition: ease-in-out 0.2s;
+        }
+
         .nav-padding{
             padding-left: 5%;
             padding-right: 5%;
         }
 
-        .about {
-            display: flex; flex-wrap: wrap; align-items: center;
+        .wrapping {
+            display: flex; flex-wrap: wrap;
         }
 
         .flex-1 {
             flex: 1;
         }
 
-        .flex-2 {
-            flex: 2;
-        }
-
-        .about-padding {
+        .card-padding {
             padding: 5%;
         }
 
         .about-image {
-            width: 35vh;
+            width: 50vh;
             height: auto;
         }
 
+        .experience-image {
+            height: 50vh;
+            width: auto;
+        }
+
         @media screen and (max-width: 600px) {
-            .about-image {
+            .experience-image  {
                 width: 100%;
                 height: auto;
             }
+
+            .about-image {
+            width: 50vh;
+            height: auto;
+        }
             
+        }
+
+        .bg{
+            background-color: #f8f8f8;
+        }
+
+        .site-bottom-margin{
+            padding-bottom: 20vh;
         }
     </style>
 </head>
@@ -129,8 +149,8 @@
             <div class="name-header">David Mead</div>
             <br>
             <div class="navbar nav-padding">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
+                <a href="#About">About</a>
+                <a href="#Experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -139,18 +159,65 @@
 
     <!-- Summary content -->
     <!-- What this page is about etc -->
-    <main class="site-top-margin site-side-margin">
-        <section id="about">
-            <div class="about">
-                <img src="./image/profile-image.jpeg" alt="Description of image" class="flex-1 about-image">
-                <div class="flex-2 about-padding">
+    <main class="site-top-margin site-bottom-margin">
+        <section id="About" class="hover-grow bg site-side-margin">
+            <div class="wrapping navbar">
+                <img src="./image/profile-image.jpeg" alt="Description of image" class="about-image flex-1">
+                <div class="flex-1 card-padding">
                     <h1>About Me</h1>
                     <p>Hello, I'm David. I am an enthusiastic and aspiring hardware/software engineer currently pursuing an integrated MEng in Electronic & Software Engineering at the University of Glasgow. I was honoured to be recognised for academic excellence as a top-performing student in 2023/24. With hands-on experience in designing and building electronics, as well as creating custom software solutions for clients through university projects and a summer internship at Virgin Money, I am passionate about innovation. I eagerly anticipate launching my career and contributing to the development of cutting-edge engineering solutions.</p>
                 </div>
             </div>
         </section>
+        
+        <section id="Experience" class="margin-tops site-side-margin">
+            <h1 class="card-padding centre">Technical Work Experience <button onclick="toggleExperience()">Toggle Experience</button></h1>
+            <div id="experience-content" style="display: none;">
+                <div id="GUSS" class="wrapping margin-tops hover-grow bg">
+                    <img src="./image/GUSS_GU.png" alt="Glasgow-uni-img-1" class="experience-image flex-1">
+                    <div class="flex-1 card-padding">
+                        <h1>Glasgow University Software Service</h1>
+                        <p>Glasgow University Software Service (GUSS) provides managed software development services, employing computing science students as developers and design students as UX/UI developers.</p>
+                        <ul>
+                            <li><strong>Web Application Testing:</strong> Conducted testing for a web application designed to connect people who speak or want to learn Gaelic, ensuring functionality, usability, and performance.</li>
+                            <br>
+                            <li>More projects to be added once complete</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <section id="Experience">
+                <div id="Virgin-Money" class="wrapping hover-grow navbar bg">
+                    <div class="flex-1 card-padding">
+                        <h1>Virgin Money</h1>
+                        <p>Top 10 UK Bank. It provides financial services for personal and business banking: Current accounts, savings, mortgages and credit cards.</p>
+                        <br>
+                        <ul>
+                            <li><strong>Agile Development:</strong> Worked within the Marketing Analytics team, building 2 software solutions through agile methodologies to streamline department workflows and created a data dashboard with Power BI.</li>
+                            <br>
+                            <li><strong>Leave & Whereabouts Tracker:</strong> Implemented a tracker using the Power Platform, now actively used by a department of 40, which improved scheduling and visibility.</li>
+                            <br>
+                            <li><strong>Customer Behaviour Dashboard (Proactive Project):</strong> Built a dashboard for customer and transaction behaviour analysis using SQL in SAS. Data visualisations and design elements from this project were adopted by 10% of team members in the Strategic and Advanced analytics department.</li>
+                            <br>
+                            <li><strong>Work Request & Issue Tracker:</strong> Collaborated with stakeholders to gather requirements and design a centralised work request portal. Created wireframes and developed an initial website that combined 4 separate team portals into 1.</li>
+                        </ul>
+                    </div>
+                    <img src="./image/VM-Image.jpeg" alt="Virgin Money Logo" class="experience-image flex-1">
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleExperience() {
+                var content = document.getElementById('experience-content');
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            }
+        </script>
+
+        <section>
 
         </section>
 
