@@ -1,38 +1,168 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>David Mead - My information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Mead - CV</title>
     <style>
+        @font-face {
+            font-family: site-font;
+            src: url('./font/Exo-Light.otf');
+        }
+
+        .margin-tops {
+            margin-top: 2vh;
+        }
+
         body {
-            background-color: #000;
-            font-family: Arial, sans-serif;
-            color: white;
+            font-family: site-font;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #666;
         }
 
-        #section-1 {
-            background-color: #00FF00;
-            height: 33%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .centre-div {
-            margin: 0 auto;
-            width: 50%;
-            background-color: #0000FF;
-            height: 100%;
+        .centre {
+            text-align: center;
         }
-        .square {
-            width: 15%;
-            height: 15%;
-            background-color: #FF0000;
+
+        .site-side-margin{
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+
+        .site-top-margin{
+            margin-top: 15vh;
+        }
+
+        .name-header{
+            font-size: 2em;
+        }
+
+        .header{
+            left:0;
+            top: 0;
+            position:fixed; 
+            width:100%;
+            background-color: #f8f8f8;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            scale: 1.1;
+            transition: ease-in-out 0.2s;
+        }
+
+        .name-header:hover {
+            scale: 1.1;
+            transition: ease-in-out 0.2s;
+        }
+
+        .navbar {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+
+        .bar {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+
+        section {
+            height: fit-content;
+        }
+
+        .nav-padding{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .about {
+            display: flex; flex-wrap: wrap; align-items: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .flex-2 {
+            flex: 2;
+        }
+
+        .about-padding {
+            padding: 5%;
+        }
+
+        .about-image {
+            width: 35vh;
+            height: auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            .about-image {
+                width: 100%;
+                height: auto;
+            }
+            
         }
     </style>
 </head>
-
 <body>
-<div id="center-div">
-    <div class="square"></div>
-</div>
+    <!-- sticky top header -->
+    <div class="header">
+        <div class="centre site-side-margin">
+            <div class="name-header">David Mead</div>
+            <br>
+            <div class="navbar nav-padding">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary content -->
+    <!-- What this page is about etc -->
+    <main class="site-top-margin site-side-margin">
+        <section id="about">
+            <div class="about">
+                <img src="./image/profile-image.jpeg" alt="Description of image" class="flex-1 about-image">
+                <div class="flex-2 about-padding">
+                    <h1>About Me</h1>
+                    <p>Hello, I'm David. I am an enthusiastic and aspiring hardware/software engineer currently pursuing an integrated MEng in Electronic & Software Engineering at the University of Glasgow. I was honoured to be recognised for academic excellence as a top-performing student in 2023/24. With hands-on experience in designing and building electronics, as well as creating custom software solutions for clients through university projects and a summer internship at Virgin Money, I am passionate about innovation. I eagerly anticipate launching my career and contributing to the development of cutting-edge engineering solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Experience">
+
+        </section>
+
+        <section id="Projects">
+        
+        </section>
+
+        <section id="Contact">
+
+        </section>
+
+    </main>
+
 </body>
-
-
-
 </html>
