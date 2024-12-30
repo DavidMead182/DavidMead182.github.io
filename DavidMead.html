@@ -10,6 +10,12 @@
             src: url('./font/Exo-Light.otf');
         }
 
+        .centre-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .margin-tops {
             margin-top: 2vh;
         }
@@ -76,12 +82,7 @@
             justify-content: space-between;
             display: flex;
             align-items: center;
-        }
-
-        .bar {
-            justify-content: space-between;
-            display: flex;
-            align-items: center;
+            gap: 2%;
         }
 
         section {
@@ -154,6 +155,46 @@
             width: 45vh;
             height: fit-content;
         }
+
+        .dropdown {
+                    display: none;
+                }
+                .dropbtn {
+                    background-color: #f8f8f8;
+                    color: #333;
+                    padding: 16px;
+                    font-size: 16px;
+                    border: none;
+                    cursor: pointer;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f8f8f8;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+                .dropdown-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+                @media screen and (max-width: 600px) {
+                    .navbar {
+                        display: none;
+                    }
+                    .dropdown {
+                        display: block;
+                    }
+                }
     </style>
 </head>
 <body>
@@ -169,6 +210,16 @@
                 <a href="#Projects">Projects</a>
                 <a href="#Contact">Contact</a>
             </div>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#About">About</a>
+                    <a href="#Experience">Experience</a>
+                    <a href="#Education">Education</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#Contact">Contact</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -176,7 +227,7 @@
     <!-- What this page is about etc -->
     <main class="site-top-margin site-bottom-margin">
         <section id="About" class="hover-grow bg site-side-margin">
-            <div class="wrapping navbar">
+            <div class="wrapping">
                 <img src="./image/profile-image.jpeg" alt="Description of image" class="about-image flex-1">
                 <div class="flex-1 card-padding">
                     <h1>About Me</h1>
@@ -300,31 +351,7 @@
 
         <section id="Projects">
             <h1 class="centre card-padding">Projects</h1>
-            <div class="wrapping site-side-margin" style="gap: 20px;">
-
-                <div class="flex-1 card-padding hover-grow bg card">
-                    <img src="./image/GU.jpeg" alt="Project 1 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 1</h2>
-                    <p>Brief description of Project 1.</p>
-                </div>
-
-                <div class="flex-1 card-padding hover-grow bg card">
-                    <img src="./image/GU.jpeg" alt="Project 2 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 2</h2>
-                    <p>Brief description of Project 2.</p>
-                </div>
-
-                <div class="flex-1 card-padding hover-grow bg card">
-                    <img src="./image/GU.jpeg" alt="Project 3 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 3</h2>
-                    <p>Brief description of Project 3.</p>
-                </div>
-
-                <div class="flex-1 card-padding hover-grow bg card">
-                    <img src="./image/GU.jpeg" alt="Project 1 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 1</h2>
-                    <p>Brief description of Project 1.</p>
-                </div>
+            <div class="wrapping site-side-margin centre-div" style="gap: 20px;">
 
                 <div class="flex-1 card-padding hover-grow bg card">
                     <img src="./image/GU.jpeg" alt="Project 2 Image" style="width: 100%; height: auto;">
@@ -342,6 +369,12 @@
         </section>
 
         <section id="Contact">
+            <h1 class="centre card-padding">Contact Me</h1>
+            <div class="site-side-margin centre-div" style="gap: 5%;">
+                <a href="linkedin.com/in/-davidmead-" class=""><h2>LinkedIn</h2></a>
+                <a href="" class=""><h2>GitHub</h2></a>
+                <a href="" class=""><h2>Email</h2></a>
+            <div>
 
         </section>
 
