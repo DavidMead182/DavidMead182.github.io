@@ -149,14 +149,13 @@
         .card {
             padding: 20px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            width: 45vh;
             height: fit-content;
         }
 
         .dropdown {
                     display: none;
                 }
-                .dropbtn {
+                .dropdown-button {
                     background-color: #f8f8f8;
                     color: #333;
                     padding: 16px;
@@ -200,10 +199,6 @@
                     width: 100%;
                     height: auto;
                     }
-
-                    .container {
-                        flex-direction: column;
-                    }
                 }
 
                 .right-div {
@@ -214,10 +209,17 @@
                 }
 
                 .container {
-            display: flex;
-            height: 100vh;
-            gap: 2vh;
-        }
+                    display: flex;
+                    height: 100vh;
+                    gap: 2vh;
+                }
+
+            @media screen and (max-width: 900px) {
+                
+                .container {
+                        flex-direction: column;
+                    }
+            }
 
         .left-div {
             flex: 1;
@@ -235,14 +237,14 @@
             <div class="name-header">David Mead</div>
             <br>
             <div class="navbar nav-padding">
-                <a href="#About">About</a>
-                <a href="#Experience">Experience</a>
-                <a href="#Education">Education</a>
-                <a href="#Projects">Projects</a>
-                <a href="#Contact">Contact</a>
+                <a href="../DavidMead.html#About" onclick="menuToggle()" >About</a>
+                    <a href="../DavidMead.html#Experience" onclick="menuToggle()">Experience</a>
+                    <a href="../DavidMead.html#Education" onclick="menuToggle()">Education</a>
+                    <a href="../DavidMead.html#Projects" onclick="menuToggle()">Projects</a>
+                    <a href="../DavidMead.html#Contact" onclick="menuToggle()">Contact</a>
             </div>
             <div class="dropdown">
-                <button class="dropbtn" onclick="menuToggle()">Menu</button>
+                <button class="dropdown-button" onclick="menuToggle()">Menu</button>
                 <div class="dropdown-content" id="dropdownMenu">
                     <a href="../DavidMead.html#About" onclick="menuToggle()" >About</a>
                     <a href="../DavidMead.html#Experience" onclick="menuToggle()">Experience</a>
@@ -256,10 +258,17 @@
     </div>
 
     <div class="site-top-margin">
-        <div><h1 class="centre hover-grow">Project Name</h1></div>
+
+        <div>
+            <h1 class="centre hover-grow">Project Name</h1>
+        </div>
+
         <div class="container site-side-margin site-bottom-margin margin-tops">
-            <div class="left-div margin-tops small-shadow card-padding">
-                <img src="../image/UB.jpg" alt="Project image" class="about-image">
+            <div class="card left-div margin-tops small-shadow card-padding">
+                <div class="centre-div">
+                    <img src="../image/UB.jpg" alt="Project image" class="about-image">
+                </div>
+                
                 <h2>Project Description</h2>
                 <p>Project description here</p>
                 <br>
@@ -270,8 +279,9 @@
                     <li>Feature 3</li>
                 </ul>
             </div>
+
             <div class="right-div margin-tops">
-                <div class="right-child small-shadow card-padding">
+                <div class="card right-child small-shadow card-padding">
                     <h2>Project Details</h2>
                     <p>Project details here</p>
                     <br>
@@ -282,10 +292,11 @@
                         <li>Technology 3</li>
                     </ul>
                 </div>
-                <div class="right-child small-shadow card-padding">
+                <div class="card right-child small-shadow card-padding">
                     <h2>Project Links/Downloads</h2>
                     <ul>
-                        <li><a href="">Link 1</a></li>
+                            <li><a href="">Link 1</a></li>
+                        </ul>
                 </div>
             </div>
         </div>
