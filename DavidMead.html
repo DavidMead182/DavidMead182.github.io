@@ -134,19 +134,6 @@
             align-self: center;
         }
 
-        @media screen and (max-width: 600px) {
-            .experience-image  {
-                width: 100%;
-                height: auto;
-            }
-
-            .about-image {
-            width: 100%;
-            height: auto;
-            }
-            
-        }
-
         .bg{
             background-color: #f8f8f8;
         }
@@ -196,12 +183,22 @@
                 .dropdown:hover .dropdown-content {
                     display: block;
                 }
-                @media screen and (max-width: 600px) {
+                @media screen and (max-width: 700px) {
                     .navbar {
                         display: none;
                     }
                     .dropdown {
                         display: block;
+                    }
+
+                    .experience-image  {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .about-image {
+                    width: 100%;
+                    height: auto;
                     }
                 }
     </style>
@@ -235,8 +232,10 @@
 
     <!-- Summary content -->
     <!-- What this page is about etc -->
+    <div id="About"></div>
+
     <main class="site-top-margin site-bottom-margin">
-        <section id="About" class="hover-grow bg site-side-margin">
+        <section class="hover-grow bg site-side-margin">
             <div class="wrapping">
                 <img src="./image/profile-image.jpeg" alt="Description of image" class="about-image flex-1">
                 <div class="flex-1 card-padding">
@@ -253,9 +252,9 @@
                 </div>
             </div>
         </section>
-        <section id="Experience" class="margin-tops site-side-margin">
-            <h1 class="card-padding centre hover-grow">Technical Work Experience</h1>
 
+        <div id="Experience"><h1 class="card-padding centre hover-grow">Technical Work Experience</h1></div>
+        <section class="margin-tops site-side-margin">
             <div id="GUSS" class="wrapping margin-tops hover-grow bg">
                 <img src="./image/GUSS_GU.png" alt="Glasgow-uni-img-1" class="experience-image flex-1">
                 <div class="flex-1 card-padding">
@@ -311,9 +310,10 @@
             </div>
         </section>
 
-        <section id="Education" class="margin-tops site-side-margin">
-            <h1 class="centre hover-grow">Education</h1>
-            <div id="University" class="wrapping hover-grow bg">
+        <div id="Education"><h1 class="card-padding centre hover-grow">Education</h1></div>
+
+        <section class="margin-tops">
+            <div id="University" class="wrapping hover-grow bg site-side-margin">
                 <div class="flex-1 card-padding">
                     <h1>UNIVERSITY OF GLASGOW</h1>
                     <p>Glasgow, Scotland</p>
@@ -344,7 +344,7 @@
                 <img src="./image/Guni.jpeg" alt="underbelly image" class="experience-image flex-1">
             </div>
 
-            <div id="School" class="wrapping hover-grow bg margin-tops">
+            <div id="School" class="wrapping hover-grow bg margin-tops site-side-margin">
                 <div class="flex-1 card-padding">
                     <h1>GEORGE WATSON’S COLLEGE</h1>
                     <p>Edinburgh, Scotland</p>
@@ -359,18 +359,21 @@
                 <img src="./image/GW.jpg" alt="underbelly image" class="experience-image flex-1">
             </div>
         </section>
+        
+        <div id="Projects"><h1 class="card-padding centre hover-grow">Projects</h1></div>
 
-        <section id="Projects" class="margin-tops">
-            <h1 class="centre hover-grow">Projects</h1>
+        <section class="margin-tops">
             <div class="wrapping site-side-margin centre-div margin-tops" style="gap: 20px;">
 
-                <div class="flex-1 card-padding hover-grow bg card">
-                    <img src="./image/GU.jpeg" alt="Project 2 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 2</h2>
-                    <p>Brief description of Project 2.</p>
-                </div>
+                    <div class="flex-1 card-padding hover-grow bg card margin-tops">
+                        <a href="projects/F1Predict.html">
+                        <img src="./image/GU.jpeg" alt="Project 2 Image" style="width: 100%; height: auto;">
+                        <h2>Project Title 2</h2>
+                        <p>Brief description of Project 2.</p>
+                        </a>
+                    </div>
 
-                <div class="flex-1 card-padding hover-grow bg card">
+                <div class="flex-1 card-padding hover-grow bg card margin-tops">
                     <img src="./image/GU.jpeg" alt="Project 3 Image" style="width: 100%; height: auto;">
                     <h2>Project Title 3</h2>
                     <p>Brief description of Project 3.</p>
@@ -380,7 +383,7 @@
         </section>
 
         <footer id="Contact" class="bg site-side-margin centre-div" style="padding: 20px; margin-top: 20vh; border-top: 1px solid #ddd;">
-            <div class="wrapping" style="justify-content: space-evenly; width: 100%;">
+            <div class="wrapping" style="justify-content: space-evenly; width: 100% ;">
                 <div class="flex-1 card-padding">
                     <h2>Contact Information</h2>
                     <p>Email: david.mead@example.com</p>
