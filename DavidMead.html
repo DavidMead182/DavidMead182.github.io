@@ -1,412 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Mead - CV</title>
-    <script>
-        function menuToggle() {
-            var menu = document.getElementById("dropdownMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
-    <style>
-        @font-face {
-            font-family: site-font;
-            src: url('./font/Exo-Light.otf');
-        }
-
-        .centre-div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .margin-tops {
-            margin-top: 2vh;
-        }
-
-        body {
-            font-family: site-font;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .centre {
-            text-align: center;
-        }
-
-        .site-side-margin{
-            margin-right: 15%;
-            margin-left: 15%;
-        }
-
-        .site-top-margin{
-            padding-top: 23vh;
-        }
-
-        .name-header{
-            font-size: 2em;
-        }
-
-        .header{
-            left:0;
-            top: 0;
-            position:fixed; 
-            width:100%;
-            background-color: #f8f8f8;
-            padding-top: 5vh;
-            padding-bottom: 2vh;
-            z-index: 1000;
-        }
-
-
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        a:hover {
-            scale: 1.1;
-            transition: ease-in-out 0.2s;
-        }
-
-        .name-header:hover {
-            scale: 1.1;
-            transition: ease-in-out 0.2s;
-        }
-
-        .navbar {
-            justify-content: space-between;
-            display: flex;
-            align-items: center;
-            gap: 2%;
-        }
-
-        section {
-            height: fit-content;
-        }
-
-        .hover-grow:hover {
-            scale: 1.1;
-            transition: ease-in-out 0.2s;
-        }
-
-        .nav-padding{
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-
-        .wrapping {
-            display: flex; flex-wrap: wrap;
-        }
-
-        .flex-1 {
-            flex: 1;
-        }
-
-        .card-padding {
-            padding: 5%;
-        }
-
-        .about-image {
-            width: 50vh;
-            height: auto;
-            align-self: center;
-
-        }
-
-        .experience-image {
-            height: 50vh;
-            width: auto;
-            align-self: center;
-        }
-
-        .bg{
-            background-color: #f8f8f8;
-        }
-
-        .site-bottom-margin{
-            padding-bottom: 20vh;
-        }
-
-        .small-shadow{
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        }
-
-        .card {
-            padding: 20px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            width: 45vh;
-            height: fit-content;
-        }
-
-        .dropdown {
-                    display: none;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>David Mead - Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <style>
+                body {
+                font-family: 'Poppins', sans-serif;
                 }
-                .dropbtn {
-                    background-color: #f8f8f8;
-                    color: #333;
-                    padding: 16px;
-                    font-size: 16px;
-                    border: none;
-                    cursor: pointer;
-                }
-                .dropdown-content {
-                    display: none;
-                    position: relative;
-                    background-color: #f8f8f8;
-                    min-width: 160px;
-                    z-index: 1;
-                }
-                .dropdown-content a {
-                    color: black;
-                    padding: 12px 16px;
-                    text-decoration: none;
-                    display: block;
-                }
-                .dropdown-content a:hover {
-                    background-color: #ddd;
-                }
-                .dropdown:hover .dropdown-content {
-                    display: block;
-                }
-                @media screen and (max-width: 700px) {
-                    .navbar {
-                        display: none;
-                    }
-                    .dropdown {
-                        display: block;
-                    }
+        </style>
+    </head>
 
-                    .experience-image  {
-                        width: 100%;
-                        height: auto;
-                    }
-
-                    .about-image {
-                    width: 100%;
-                    height: auto;
-                    }
-                }
-    </style>
-</head>
-<body>
-    <!-- sticky top header -->
-    <div class="header">
-        <div class="centre site-side-margin">
-            <div class="name-header">David Mead</div>
-            <br>
-            <div class="navbar nav-padding">
-                <a href="#About">About</a>
-                <a href="#Experience">Experience</a>
-                <a href="#Education">Education</a>
-                <a href="#Projects">Projects</a>
-                <a href="#Contact">Contact</a>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn" onclick="menuToggle()">Menu</button>
-                <div class="dropdown-content" id="dropdownMenu">
-                    <a href="#About" onclick="menuToggle()" >About</a>
-                    <a href="#Experience" onclick="menuToggle()">Experience</a>
-                    <a href="#Education" onclick="menuToggle()">Education</a>
-                    <a href="#Projects" onclick="menuToggle()">Projects</a>
-                    <a href="#Contact" onclick="menuToggle()">Contact</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Summary content -->
-    <!-- What this page is about etc -->
-    <div id="About"></div>
-
-    <main class="site-top-margin site-bottom-margin">
-        <section class="hover-grow bg site-side-margin">
-            <div class="wrapping">
-                <img src="./image/profile-image.jpeg" alt="Description of image" class="about-image flex-1">
-                <div class="flex-1 card-padding">
-                    <h1>About Me</h1>
-                    <p>Hi, I'm David, a 4th year Electronics and Software Engineering student at the University of Glasgow.</p>
-                    <br>
-                    <p>Add Summary here - inculding what career goals, what i want to persure and interestes</p>
-                    <br>
-                    <h3>Achievements</h3>
-                    <ul>
-                        <li>Engineering Excellence list</li>
-                        <li>UKESF Scholarship Recipient - sponsored by Science and Technology Facilities Council (STFC)</li>
-                    </ul>
-                </div>
+    <body class="bg-gray-900 text-white">
+    <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gray-800 p-6">
+            <h1 class="text-6xl font-bold text-blue-400 mb-4">David Mead</h1>
+            <p class="text-2xl text-gray-300 mb-8">Electronic & Software Engineering Student | UKESF Scholar | Part-Time Software Engineer</p>
+            <div class="flex space-x-4">
+            <a href="mailto:davidmead014@gmail.com" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Email Me</a>
+            <a href="https://www.linkedin.com/in/-davidmead-/" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">LinkedIn</a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Download CV</a>
             </div>
         </section>
 
-        <div id="Experience"><h1 class="card-padding centre hover-grow">Technical Work Experience</h1></div>
+    <!-- Navigation Bar -->
+        <nav class="sticky top-0 bg-gray-900 z-50 shadow-lg">
+                <div class="container mx-auto flex justify-between items-center p-4">
+                <a href="#" class="text-2xl font-bold text-blue-400">David Mead</a>
+                <div class="flex space-x-6">
+                    <a href="#education" class="text-gray-300 hover:text-blue-400">Education</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400">Projects</a>
+                    <a href="#experience" class="text-gray-300 hover:text-blue-400">Experience</a>
+                    <a href="#leadership" class="text-gray-300 hover:text-blue-400">Leadership</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400">Contact</a>
+                </div>
+                </div>
+        </nav>
 
-        <section class="margin-tops site-side-margin">
-            <div id="GUSS" class="wrapping margin-tops hover-grow bg">
-                <img src="./image/GUSS_GU.png" alt="Glasgow-uni-img-1" class="experience-image flex-1">
-                <div class="flex-1 card-padding">
-                    <h1>Glasgow University Software Service - Software Engineer</h1>
-                    <p>Glasgow University Software Service (GUSS) provides managed software development services, employing computing science students as developers and design students as UX/UI developers.</p>
-                    <ul>
-                        <li><strong>Web Application Testing:</strong> Conducted testing for a web application designed to connect people who speak or want to learn Gaelic, ensuring functionality, usability, and performance.</li>
-                        <br>
-                        <li>More projects to be added once complete</li>
-
-                    </ul>
+        <!-- Education Section -->
+        <section id="education" class="py-16 px-6 bg-gray-800">
+            <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-blue-400 mb-8">Education</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- University of Glasgow -->
+                <div class="bg-gray-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">University of Glasgow</h3>
+                <p class="text-gray-300">Integrated MEng Electronic & Software Engineering</p>
+                <p class="text-gray-400">GPA: On track for a 1st Class (18.33/22)</p>
+                <ul class="mt-4 space-y-2">
+                    <li class="text-gray-300">Masters Project: Low Power Digital IC Implementation for RISC-V Processor</li>
+                    <li class="text-gray-300">Achievements: Engineering Excellence List, UKESF Scholarship</li>
+                    <li class="text-gray-300">Relevant Courses: VLSI, Machine Learning, AI, Software Engineering</li>
+                </ul>
+                </div>
+                <!-- George Watson’s College -->
+                <div class="bg-gray-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">George Watson’s College</h3>
+                <p class="text-gray-300">3 Scottish Advanced Highers, 5 Scottish Highers, 8 National 5s</p>
+                <ul class="mt-4 space-y-2">
+                    <li class="text-gray-300">Subjects: Computer Science, Engineering Science, Physics, Mathematics</li>
+                    <li class="text-gray-300">Achievements: Engineering Science Colours, Bronze DofE</li>
+                </ul>
                 </div>
             </div>
-
-            <div id="Virgin-Money" class="wrapping margin-tops hover-grow bg">
-                <div class="flex-1 card-padding">
-                    <h1>Virgin Money - Technical Intern</h1>
-                    <p>Top 10 UK Bank. It provides financial services for personal and business banking: Current accounts, savings, mortgages and credit cards.</p>
-                    <br>
-                    <ul>
-                        <li><strong>Agile Development:</strong> Worked within the Marketing Analytics team, building 2 software solutions through agile methodologies to streamline department workflows and created a data dashboard with Power BI.</li>
-                        <br>
-                        <li><strong>Leave & Whereabouts Tracker:</strong> Implemented a tracker using the Power Platform, now actively used by a department of 40, which improved scheduling and visibility.</li>
-                        <br>
-                        <li><strong>Customer Behaviour Dashboard (Proactive Project):</strong> Built a dashboard for customer and transaction behaviour analysis using SQL in SAS. Data visualisations and design elements from this project were adopted by 10% of team members in the Strategic and Advanced analytics department.</li>
-                        <br>
-                        <li><strong>Work Request & Issue Tracker:</strong> Collaborated with stakeholders to gather requirements and design a centralised work request portal. Created wireframes and developed an initial website that combined 4 separate team portals into 1.</li>
-                    </ul>
-                </div>
-                <img src="./image/VM-Image.jpeg" alt="Virgin Money Logo" class="experience-image flex-1">
-            </div>
-        </section>
-
-        <div><h1 class="card-padding centre hover-grow">Other Experience</h1></div>
-
-        <section class="site-side-margin">
-            <div id="Underbelly" class="wrapping hover-grow bg">
-                <img src="./image/UB.jpg" alt="underbelly image" class="experience-image flex-1">
-                <div class="flex-1 card-padding">
-                    <h1>Underbelly Limited - Bar Stock Supervisor & Chargehand</h1>
-                    <p> Underbelly is a UK-based live entertainment company that runs several festivals and events in the UK and Australia.</p>
-                    <br>
-                    <ul>
-                        <li><strong>Team Management:</strong> Led and managed a team of 7 during the Edinburgh Fringe and Edinburgh University graduation period, developing strong team management and leadership skills.</li>
-                        <br>
-                        <li><strong>Stock Coordination:</strong> Coordinated the daily collection and distribution of over 36 tons of stock per week across five sites, requiring effective collaboration and communication with team members at each location.</li>
-                        <br>
-                        <li><strong>Bar Operations:</strong> Oversaw bar operations as a chargehand, ensuring smooth service and prompt issue resolution, reinforcing leadership and adaptability in high pressure environments.</li>
-                        <br>
-                        <li><strong>Site Setup and Maintenance:</strong> Contributed to site setup and maintenance, which required problem-solving skills in tasks such as laying carpets, building stairs and shelters, and repairing coffee machines.</li>
-                        <br>
-
-                    </ul>
-                </div>
             </div>
         </section>
 
-        <div id="Education"><h1 class="card-padding centre hover-grow">Education</h1></div>
-
-
-        <section class="margin-tops">
-            <div id="University" class="wrapping hover-grow bg site-side-margin">
-                <div class="flex-1 card-padding">
-                    <h1>UNIVERSITY OF GLASGOW</h1>
-                    <p>Glasgow, Scotland</p>
-                    <p>Integrated MEng Electronic & Software Engineering. Previous Year GPA: 18.33/22 (First Class)</p>
-                    <p>Sept 2021 - June 2026</p>
-                    <ul>
-                        <li><strong>MEng Project:</strong> External at the Science and Technology Facilities Council (STFC) at the Harwell Campus
-                            <ul>
-                                <li>STFC is a research facility with multiple campuses across the UK and overseas which support fundamental research in astronomy, physics, computational science and space science.</li>
-                                <li>My project will focus on microelectronics and will commence in July 2025.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Achievements:</strong>
-                            <ul>
-                                <li>Engineering Excellence List Session 2023/24: Recognised as one of the top students in the engineering program based on academic performance.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Relevant Coursework & Projects:</strong>
-                            <ul>
-                                <li>Heartbeat monitor: Designed, built and tested a PCB; programmed a microcontroller in C++ to digitally process data to display it on an LED matrix display.</li>
-                                <li>Excel Add-on to analysis & explain large banking excel sheets: interacted with an external client and using agile methodologies to create a user-friendly analysis add-on using TypeScript and React.</li>
-                                <li>Electronic enhancements for the Scottish Fire Service: Partnered with Thales to develop electronic device to track fire fighters for the 2024/25 academic session, focused on safety, durability, cost and ease of use.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Relevant Courses:</strong> VLSI, Computer Architecture, Control, Machine Learning, Artificial Intelligence & Real-time computer systems</li>
-                    </ul>
+        <!-- Projects & Technical Skills Section -->
+        <section id="projects" class="py-16 px-6 bg-gray-900">
+            <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-blue-400 mb-8">Projects & Technical Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Firefighter Tracking System -->
+                <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">Firefighter Tracking System</h3>
+                <p class="text-gray-300">Developed a real-time tracking system for firefighters using PyQt5 and embedded systems.</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Learn More</button>
                 </div>
-                <img src="./image/Guni.jpeg" alt="underbelly image" class="experience-image flex-1">
+                <!-- Excel Add-on for Banking Data Analysis -->
+                <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">Excel Add-on for Banking Data Analysis</h3>
+                <p class="text-gray-300">Created an Excel add-on using TypeScript and React to streamline data analysis.</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Learn More</button>
+                </div>
             </div>
-
-            <div id="School" class="wrapping hover-grow bg margin-tops site-side-margin">
-                <div class="flex-1 card-padding">
-                    <h1>GEORGE WATSON’S COLLEGE</h1>
-                    <p>Edinburgh, Scotland</p>
-                    <p>Qualifications: 3 Scottish Advanced Highers, 5 Scottish Highers, 8 National 5s. *Highers in bold</p>
-                    <p>2008 - 2021</p>
-                    <ul>
-                        <li>Engineering Science, Physics, Computer Science, Mathematics, Chemistry, Design & Manufacture, English & German</li>
-                        <li><strong>Awards:</strong> Engineering Science Colours, Bronze DofE</li>
-                        <li><strong>Extra-curricular:</strong> Greenpower Racing, Upcycling Club, Rugby</li>
-                    </ul>
+            <!-- Technical Skills -->
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Technical Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">Python</span>
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">Java</span>
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">C++</span>
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">React</span>
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">Git</span>
+                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded">PCB Design</span>
                 </div>
-                <img src="./image/GW.jpg" alt="underbelly image" class="experience-image flex-1">
+            </div>
             </div>
         </section>
-        
-        <div id="Projects"><h1 class="card-padding centre hover-grow">Projects</h1></div>
 
-        <section class="margin-tops">
-            <div class="wrapping site-side-margin centre-div margin-tops" style="gap: 20px;">
-
-                    <div class="flex-1 card-padding hover-grow bg card margin-tops">
-                        <a href="projects/F1Predict.html">
-                        <img src="./image/GU.jpeg" alt="Project 2 Image" style="width: 100%; height: auto;">
-                        <h2>Project Title 2</h2>
-                        <p>Brief description of Project 2.</p>
-                        </a>
-                    </div>
-
-                <div class="flex-1 card-padding hover-grow bg card margin-tops">
-                    <img src="./image/GU.jpeg" alt="Project 3 Image" style="width: 100%; height: auto;">
-                    <h2>Project Title 3</h2>
-                    <p>Brief description of Project 3.</p>
-                </div>
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 px-6 bg-gray-800">
+            <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-blue-400 mb-8">Experience</h2>
+            <!-- Glasgow University Software Service -->
+            <div class="bg-gray-700 p-6 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold text-blue-400">Glasgow University Software Service</h3>
+                <p class="text-gray-300">Software Engineer (Remote, Part-time)</p>
+                <ul class="mt-4 space-y-2">
+                <li class="text-gray-300">Developed a VR-based learning environment using Unity and C#.</li>
+                <li class="text-gray-300">Integrated haptic glove technology for immersive experiences.</li>
+                </ul>
             </div>
-        
+            <!-- Virgin Money PLC -->
+            <div class="bg-gray-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">Virgin Money PLC</h3>
+                <p class="text-gray-300">Technical Intern (Hybrid)</p>
+                <ul class="mt-4 space-y-2">
+                <li class="text-gray-300">Built software solutions and a Power BI dashboard.</li>
+                <li class="text-gray-300">Implemented a Leave & Whereabouts Tracker using Power Platform.</li>
+                </ul>
+            </div>
+            </div>
         </section>
 
-        <footer id="Contact" class="bg site-side-margin centre-div" style="padding: 20px; margin-top: 20vh; border-top: 1px solid #ddd;">
-            <div class="wrapping" style="justify-content: space-evenly; width: 100% ;">
-                <div class="flex-1 card-padding">
-                    <h2>Contact Information</h2>
-                    <p>Email: david.mead@example.com</p>
-                    <p>Phone: +123 456 7890</p>
-                </div>
-                <div class="flex-1 card-padding">
-                    <h2>Social Media</h2>
-                    <p><a href="https://www.linkedin.com/in/davidmead">LinkedIn</a></p>
-                    <p><a href="https://github.com/DavidMead182">GitHub</a></p>
-                </div>
-                <div class="flex-1 card-padding">
-                    <h2>Location</h2>
-                    <p>City: Glasgow</p>
-                    <p>Country: Scotland</p>
-                </div>
+        <!-- Leadership Section -->
+        <section id="leadership" class="py-16 px-6 bg-gray-900">
+            <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-blue-400 mb-8">Leadership Experience</h2>
+            <!-- Underbelly Ltd -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-400">Underbelly Ltd</h3>
+                <p class="text-gray-300">Bar Stock Supervisor & Chargehand</p>
+                <ul class="mt-4 space-y-2">
+                <li class="text-gray-300">Managed a team of 7 during Edinburgh Fringe.</li>
+                <li class="text-gray-300">Coordinated 36 tons of stock weekly across five sites.</li>
+                </ul>
             </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-6 bg-gray-800">
+            <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-blue-400 mb-8">Contact Me</h2>
+            <form class="max-w-lg mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                <textarea placeholder="Your Message" class="w-full p-2 mb-4 bg-gray-700 rounded"></textarea>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Send Message</button>
+            </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-6 bg-gray-900 text-center">
+            <p class="text-gray-300">© 2024 David Mead. All Rights Reserved.</p>
         </footer>
-
-    </main>
-
-</body>
+    </body>
 </html>
