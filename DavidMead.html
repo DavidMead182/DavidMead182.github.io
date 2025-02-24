@@ -115,11 +115,6 @@
             <div class="container mx-auto text-center">
                 <h2 class="text-3xl font-bold text-blue-400 mb-6">Updates</h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Under Construction -->
-                    <div class="bg-gray-800 p-6 rounded-lg">
-                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Under Construction</h3>
-                        <p class="text-yellow-300">This site is still under Construction</p>
-                    </div>
                     <!-- Graduation Update -->
                     <div class="bg-gray-800 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-blue-400 mb-4">Graduation</h3>
@@ -130,7 +125,6 @@
                         <h3 class="text-2xl font-bold text-blue-400 mb-4">Incoming MEng Project</h3>
                         <p class="text-gray-300">Starting my MEng project at <span class="font-semibold">STFC</span> in <span class="font-semibold">July 2025</span>. The project focuses on Low Power Digital IC Implementation for RISC-V Processors.</p>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -293,18 +287,32 @@
             const menuToggle = document.getElementById('menu-toggle');
             const dropdownMenu = document.getElementById('dropdown-menu');
 
+            // Function to close the dropdown menu
+            const closeDropdown = () => {
+                dropdownMenu.classList.remove('dropdown-enter');
+                dropdownMenu.classList.add('dropdown-exit');
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                }, 300); // Match the animation duration
+            };
+
+            // Toggle dropdown menu
             menuToggle.addEventListener('click', () => {
                 if (dropdownMenu.classList.contains('hidden')) {
                     dropdownMenu.classList.remove('hidden');
                     dropdownMenu.classList.add('dropdown-enter');
                     dropdownMenu.classList.remove('dropdown-exit');
                 } else {
-                    dropdownMenu.classList.remove('dropdown-enter');
-                    dropdownMenu.classList.add('dropdown-exit');
-                    setTimeout(() => {
-                        dropdownMenu.classList.add('hidden');
-                    }, 300); // Match the animation duration
+                    closeDropdown();
                 }
+            });
+
+            // Close dropdown menu when a link is clicked
+            const dropdownLinks = dropdownMenu.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeDropdown();
+                });
             });
         </script>
     </body>
