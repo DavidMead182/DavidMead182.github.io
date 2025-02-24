@@ -25,15 +25,41 @@
             .animate-bounce {
                 animation: bounce 2s infinite;
             }
+
+            /* Dropdown Animation */
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-20px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-20px);
+                    opacity: 0;
+                }
+            }
+
+            .dropdown-enter {
+                animation: slideDown 0.3s ease-out forwards;
+            }
+
+            .dropdown-exit {
+                animation: slideUp 0.3s ease-out forwards;
+            }
         </style>
     </head>
 
-    <body class="sticky top-0 bg-gray-900 text-white">
-        <!-- Under Construction Banner -->
-        <div class="bg-yellow-500 text-black text-center py-2">
-            <p>This site is under construction. Please check back later for updates!</p>
-        </div>
-
+    <body class="bg-gray-900 text-white">
         <!-- Hero Section -->
         <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gray-800 p-6">
             <h1 class="text-6xl font-bold text-blue-400 mb-4">David Mead</h1>
@@ -57,7 +83,14 @@
         <nav class="sticky top-0 bg-gray-900 z-50 shadow-lg">
             <div class="container mx-auto flex justify-between items-center p-4">
                 <a href="#" class="text-2xl font-bold text-blue-400">David Mead</a>
-                <div class="flex space-x-6">
+                <!-- Hamburger Menu Button (Mobile Only) -->
+                <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <!-- Navigation Links -->
+                <div id="menu" class="hidden md:flex space-x-6">
                     <a href="#about" class="text-gray-300 hover:text-blue-400">About Me</a>
                     <a href="#education" class="text-gray-300 hover:text-blue-400">Education</a>
                     <a href="#projects" class="text-gray-300 hover:text-blue-400">Projects</a>
@@ -66,10 +99,44 @@
                     <a href="#contact" class="text-gray-300 hover:text-blue-400">Contact</a>
                 </div>
             </div>
+            <!-- Dropdown Menu (Mobile Only) -->
+            <div id="dropdown-menu" class="md:hidden hidden bg-gray-800">
+                <a href="#about" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">About Me</a>
+                <a href="#education" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Education</a>
+                <a href="#projects" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Projects</a>
+                <a href="#experience" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Experience</a>
+                <a href="#leadership" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Leadership</a>
+                <a href="#contact" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Contact</a>
+            </div>
         </nav>
 
+        <!-- Updates Section -->
+        <section class="py-12 px-6 bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Updates</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Under Construction -->
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Under Construction</h3>
+                        <p class="text-yellow-300">This site is still under Construction</p>
+                    </div>
+                    <!-- Graduation Update -->
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Graduation</h3>
+                        <p class="text-gray-300">Graduating on <span class="font-semibold">July 2026</span> with an MEng in Electronic & Software Engineering.</p>
+                    </div>
+                    <!-- MEng Project Update -->
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Incoming MEng Project</h3>
+                        <p class="text-gray-300">Starting my MEng project at <span class="font-semibold">STFC</span> in <span class="font-semibold">July 2025</span>. The project focuses on Low Power Digital IC Implementation for RISC-V Processors.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
         <!-- About Me Section -->
-        <section id="about" class="py-16 px-6 bg-gray-900">
+        <section id="about" class="py-16 px-6 bg-gray-800">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">About Me</h2>
                 <div class="flex flex-col md:flex-row items-center gap-8">
@@ -101,12 +168,12 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-16 px-6 bg-gray-800">
+        <section id="education" class="py-16 px-6 bg-gray-900">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Education</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- University of Glasgow -->
-                    <div class="bg-gray-700 p-6 rounded-lg">
+                    <div class="bg-gray-800 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-blue-400">University of Glasgow</h3>
                         <p class="text-gray-300">Integrated MEng Electronic & Software Engineering</p>
                         <p class="text-gray-400">GPA: On track for a 1st Class (18.33/22)</p>
@@ -117,7 +184,7 @@
                         </ul>
                     </div>
                     <!-- George Watson’s College -->
-                    <div class="bg-gray-700 p-6 rounded-lg">
+                    <div class="bg-gray-800 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-blue-400">George Watson’s College</h3>
                         <p class="text-gray-300">3 Scottish Advanced Highers, 5 Scottish Highers, 8 National 5s</p>
                         <ul class="mt-4 space-y-2">
@@ -130,18 +197,18 @@
         </section>
 
         <!-- Projects & Technical Skills Section -->
-        <section id="projects" class="py-16 px-6 bg-gray-900">
+        <section id="projects" class="py-16 px-6 bg-gray-800">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Projects & Technical Skills</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Firefighter Tracking System -->
-                    <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="bg-gray-700 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-blue-400">Firefighter Tracking System</h3>
                         <p class="text-gray-300">Developed a real-time tracking system for firefighters using PyQt5 and embedded systems.</p>
                         <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Learn More</button>
                     </div>
                     <!-- Excel Add-on for Banking Data Analysis -->
-                    <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="bg-gray-700 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-blue-400">Excel Add-on for Banking Data Analysis</h3>
                         <p class="text-gray-300">Created an Excel add-on using TypeScript and React to streamline data analysis.</p>
                         <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Learn More</button>
@@ -163,11 +230,11 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 px-6 bg-gray-800">
-            <div class="container mx-auto"></div>
+        <section id="experience" class="py-16 px-6 bg-gray-900">
+            <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Experience</h2>
                 <!-- Glasgow University Software Service -->
-                <div class="bg-gray-700 p-6 rounded-lg mb-6">
+                <div class="bg-gray-800 p-6 rounded-lg mb-6">
                     <h3 class="text-2xl font-bold text-blue-400">Glasgow University Software Service</h3>
                     <p class="text-gray-300">Software Engineer (Remote, Part-time)</p>
                     <ul class="mt-4 space-y-2">
@@ -176,7 +243,7 @@
                     </ul>
                 </div>
                 <!-- Virgin Money PLC -->
-                <div class="bg-gray-700 p-6 rounded-lg">
+                <div class="bg-gray-800 p-6 rounded-lg">
                     <h3 class="text-2xl font-bold text-blue-400">Virgin Money PLC</h3>
                     <p class="text-gray-300">Technical Intern (Hybrid)</p>
                     <ul class="mt-4 space-y-2">
@@ -188,11 +255,11 @@
         </section>
 
         <!-- Leadership Section -->
-        <section id="leadership" class="py-16 px-6 bg-gray-900">
+        <section id="leadership" class="py-16 px-6 bg-gray-800">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Leadership Experience</h2>
                 <!-- Underbelly Ltd -->
-                <div class="bg-gray-800 p-6 rounded-lg">
+                <div class="bg-gray-700 p-6 rounded-lg">
                     <h3 class="text-2xl font-bold text-blue-400">Underbelly Ltd</h3>
                     <p class="text-gray-300">Bar Stock Supervisor & Chargehand</p>
                     <ul class="mt-4 space-y-2">
@@ -204,13 +271,13 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 px-6 bg-gray-800">
+        <section id="contact" class="py-16 px-6 bg-gray-900">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Contact Me</h2>
                 <form class="max-w-lg mx-auto">
-                    <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-700 rounded">
-                    <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-700 rounded">
-                    <textarea placeholder="Your Message" class="w-full p-2 mb-4 bg-gray-700 rounded"></textarea>
+                    <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-800 rounded">
+                    <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-800 rounded">
+                    <textarea placeholder="Your Message" class="w-full p-2 mb-4 bg-gray-800 rounded"></textarea>
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Send Message</button>
                 </form>
             </div>
@@ -220,5 +287,25 @@
         <footer class="py-6 bg-gray-900 text-center">
             <p class="text-gray-300">© 2024 David Mead. All Rights Reserved.</p>
         </footer>
+
+        <!-- JavaScript for Dropdown Navigation -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuToggle.addEventListener('click', () => {
+                if (dropdownMenu.classList.contains('hidden')) {
+                    dropdownMenu.classList.remove('hidden');
+                    dropdownMenu.classList.add('dropdown-enter');
+                    dropdownMenu.classList.remove('dropdown-exit');
+                } else {
+                    dropdownMenu.classList.remove('dropdown-enter');
+                    dropdownMenu.classList.add('dropdown-exit');
+                    setTimeout(() => {
+                        dropdownMenu.classList.add('hidden');
+                    }, 300); // Match the animation duration
+                }
+            });
+        </script>
     </body>
 </html>
