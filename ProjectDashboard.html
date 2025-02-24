@@ -21,7 +21,7 @@
                 transition: transform 0.6s;
                 transform-style: preserve-3d;
             }
-            .flip-card:hover .flip-card-inner {
+            .flip-card.flipped .flip-card-inner {
                 transform: rotateY(180deg);
             }
             .flip-card-front, .flip-card-back {
@@ -80,7 +80,7 @@
                 <h2 class="text-4xl font-bold text-blue-400 mb-8 text-center">Project Dashboard</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Project Tile 1 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('image/FireFighters.jpg');">
@@ -97,7 +97,7 @@
                     </div>
 
                     <!-- Project Tile 2 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('image/vect.jpg');">
@@ -114,7 +114,7 @@
                     </div>
 
                     <!-- Project Tile 3 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
@@ -131,7 +131,7 @@
                     </div>
 
                     <!-- Project Tile 4 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
@@ -148,7 +148,7 @@
                     </div>
 
                     <!-- Project Tile 5 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
@@ -165,7 +165,7 @@
                     </div>
 
                     <!-- Project Tile 6 -->
-                    <div class="flip-card h-96">
+                    <div class="flip-card h-96" onclick="flipCard(this)">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
                             <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
@@ -188,5 +188,12 @@
         <footer class="py-6 bg-gray-900 text-center">
             <p class="text-gray-300">© 2024 David Mead. All Rights Reserved.</p>
         </footer>
+
+        <!-- JavaScript for Flip Cards -->
+        <script>
+            function flipCard(card) {
+                card.classList.toggle('flipped');
+            }
+        </script>
     </body>
 </html>
