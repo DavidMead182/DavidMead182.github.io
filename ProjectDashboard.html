@@ -35,6 +35,29 @@
             .flip-card-back {
                 transform: rotateY(180deg);
             }
+            /* Front Side Styling */
+            .flip-card-front {
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .flip-card-front::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+            }
+            .flip-card-front h3 {
+                position: relative;
+                z-index: 1;
+                color: white;
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -60,9 +83,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Firefighter Tracking System</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('image/FireFighters.jpg');">
+                                <h3 class="text-2xl font-bold">Firefighter Tracking System</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
@@ -78,9 +100,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Excel Add-on for Banking</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('image/vect.jpg');">
+                                <h3 class="text-2xl font-bold">Excel Add-on for Banking</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
@@ -96,9 +117,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">VR Learning Environment</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
+                                <h3 class="text-2xl font-bold">VR Learning Environment</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
@@ -114,9 +134,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Customer Behavior Dashboard</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
+                                <h3 class="text-2xl font-bold">Customer Behavior Dashboard</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
@@ -132,9 +151,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Low Power IC Design</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
+                                <h3 class="text-2xl font-bold">Low Power IC Design</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
@@ -150,9 +168,8 @@
                     <div class="flip-card h-96">
                         <div class="flip-card-inner">
                             <!-- Front Side -->
-                            <div class="flip-card-front bg-gray-700 flex flex-col justify-center items-center p-6">
-                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Haptic Glove Integration</h3>
-                                <img src="https://via.placeholder.com/200" alt="Project Image" class="w-32 h-32 rounded-full">
+                            <div class="flip-card-front" style="background-image: url('https://via.placeholder.com/400');">
+                                <h3 class="text-2xl font-bold">Haptic Glove Integration</h3>
                             </div>
                             <!-- Back Side -->
                             <div class="flip-card-back bg-gray-600 flex flex-col justify-center items-center p-6">
