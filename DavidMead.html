@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>David Mead - Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="image/CV-LOGO.jpg">
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <style>
@@ -87,7 +88,7 @@
         <!-- Navigation Bar -->
         <nav class="sticky top-0 bg-gray-900 z-50 shadow-lg">
             <div class="container mx-auto flex justify-between items-center p-4">
-                <a href="#" class="text-2xl font-bold text-blue-400">David Mead</a>
+                <a href="DavidMead.html" class="text-2xl font-bold text-blue-400">David Mead</a>
                 <!-- Hamburger Menu Button (Mobile Only) -->
                 <button id="menu-toggle" class="lg:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,14 +288,23 @@
         <section id="contact" class="py-16 px-6 bg-gray-900">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-blue-400 mb-8">Contact Me</h2>
-                <form class="max-w-lg mx-auto">
-                    <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-800 rounded">
-                    <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-800 rounded">
-                    <textarea placeholder="Your Message" class="w-full p-2 mb-4 bg-gray-800 rounded"></textarea>
+                <form id="contact-form" class="max-w-lg mx-auto" method="POST" action="https://formspree.io/f/mldgqezq">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-800 rounded" required>
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-800 rounded" required>
+                    <textarea name="message" placeholder="Your Message" class="w-full p-2 mb-4 bg-gray-800 rounded" required></textarea>
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Send Message</button>
                 </form>
             </div>
         </section>
+
+        <!-- Popup -->
+        <div id="success-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-gray-800 p-8 rounded-lg text-center">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Thank You!</h3>
+                <p class="text-white">Your message has been sent successfully.</p>
+                <button id="close-popup" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="py-6 bg-gray-900 text-center">
@@ -333,6 +343,39 @@
                     closeDropdown();
                 });
             });
+
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Submit form data to Formspree
+            fetch('https://formspree.io/f/mldgqezq', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show the popup on success
+                    document.getElementById('success-popup').classList.remove('hidden');
+                    this.reset(); // Clear the form fields
+                } else {
+                    alert('Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again.');
+            });
+        });
+
+        // Close the popup when the "Close" button is clicked
+        document.getElementById('close-popup').addEventListener('click', function () {
+            document.getElementById('success-popup').classList.add('hidden');
+        });
         </script>
     </body>
 </html>
