@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV & Project Site - David Mead</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="image/CV-LOGO.jpg">
+    <link rel="icon" type="image/x-icon" href="../image/CV-LOGO.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,92 +13,101 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-800 text-white">
     <!-- Navigation Bar -->
     <nav class="sticky top-0 bg-gray-900 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center p-4">
             <a href="../DavidMead.html" class="text-2xl font-bold text-blue-400">David Mead</a>
+            <h1 class="text-2xl font-bold text-white-400">CV/Resume & Project Dashboard Website</h1>
             <div class="flex space-x-6">
-                <a href="../DavidMead.html" class="text-gray-300 hover:text-blue-400">Back to Homepage</a>
+                <a href="../DavidMead.html" class="text-gray-400 hover:text-blue-400">Back to Homepage</a>
             </div>
         </div>
     </nav>
 
-    <!-- Project Header Section -->
-    <header class="py-16 px-6 bg-gray-800">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold text-blue-400 mb-4">CV/Resume & Project Dashboard Website</h1>
-            <p class="text-gray-400 text-lg">A website showcasing my <span class="font-bold">CV/Resume</span> information and all my <span class="font-bold">projects</span>. Built using <span class="font-bold">HTML, CSS, and JavaScript</span>, and deployed on <span class="font-bold">GitHub Pages</span>.<br> This is the website you are currently viewing!</p>
-        </div>
-    </header>
+    <!-- Main Content Section -->
+    <main class="container mx-auto py-16 px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column: Content -->
+            <div class="space-y-6">
+                <!-- Project Overview Section -->
+                <section>
+                    <h2 class="text-3xl font-bold text-blue-400 mb-4">Overview</h2>
+                    <p class="text-gray-300 leading-relaxed rounded-lg p-4 bg-gray-700">
+                        This project is a personal website designed to showcase my CV/Resume and various projects. The primary problem it solves is providing a centralized platform where potential employers, collaborators, and other interested parties can easily access my professional information and project portfolio.
+                        <br><br>
+                        <span class="font-bold">Problem Solved:</span>
+                        <br>
+                        Before creating this website, my CV and project details were scattered across different platforms and formats, making it difficult for others to get a comprehensive view of my skills and experience. This website consolidates all that information in one place, making it more accessible and easier to navigate.
+                        <br><br>
+                        <span class="font-bold">Challenges Faced:</span>
+                        <br>
+                        One of the main challenges was ensuring the website was fully responsive and looked good on all devices. This was overcome by using Tailwind CSS, which provides a robust set of responsive design utilities. Another challenge was managing the dynamic content for the project dashboard. This was addressed by using JavaScript to load project data dynamically, making it easier to update and maintain.
+                        <br><br>
+                        Overall, this project has been a valuable addition to my professional toolkit, helping me present my skills and experience in a clear and organised way.
+                    </p>
+                </section>
 
-    <!-- Project Overview Section -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-blue-400 mb-4">Overview</h2>
-            <p class="text-gray-300 leading-relaxed">
-                Provide a detailed overview of the project. Explain the problem it solves, the technologies used, and the impact it has made. You can also include challenges faced and how they were overcome.
-            </p>
-        </div>
-    </section>
+                <!-- Project Features Section -->
+                <section>
+                    <h2 class="text-3xl font-bold text-blue-400 mb-4">Features</h2>
+                    <ul class="text-gray-300 text-gray-300 leading-relaxed rounded-lg p-4 bg-gray-700">
+                        <li><span class="font-bold">Responsive Design:</span> The website is fully responsive, ensuring a great experience on all devices, from desktops to mobile phones.</li>
+                        <br>
+                        <li><span class="font-bold">Project Dashboard:</span> A dedicated section to showcase all my projects with descriptions, technologies used, and links to repositories or live demos.</li>
+                        <br>
+                        <li><span class="font-bold">Dynamic Content:</span> Projects are dynamically loaded, making it easy to update and maintain the site.</li>
+                        <br>
+                        <li><span class="font-bold">Modern Styling:</span> Utilises Tailwind CSS for a clean and modern design, with custom animations and transitions.</li>
+                    </ul>
+                </section>
 
-    <!-- Project Features Section -->
-    <section class="py-16 px-6 bg-gray-800">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-blue-400 mb-4">Features</h2>
-            <ul class="text-gray-300">
-                <li><span class="font-bold">Responsive Design:</span> The website is fully responsive, ensuring a great experience on all devices, from desktops to mobile phones.</li>
-                <br>
-                <li><span class="font-bold">Project Dashboard:</span> A dedicated section to showcase all my projects with descriptions, technologies used, and links to repositories or live demos.</li>
-                <br>
-                <li><span class="font-bold">Dynamic Content:</span> Projects are dynamically loaded, making it easy to update and maintain the site.</li>
-                <br>
-                <li><span class="font-bold">Modern Styling:</span> Utilises Tailwind CSS for a clean and modern design, with custom animations and transitions.</li>
-            </ul>
-        </div>
-    </section>
+                <!-- Project Technologies Section -->
+                <section>
+                    <h2 class="text-3xl font-bold text-blue-400 mb-4">Technologies Used</h2>
+                    <div class="flex flex-wrap gap-4 text-gray-300 leading-relaxed  pl-4 rounded-lg p-4">
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">HTML</span>
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">CSS</span>
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">JavaScript</span>
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Tailwind CSS</span>
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Git</span>
+                        <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Github</span>
+                    </div>
+                </section>
 
-    <!-- Project Screenshots or Media Section -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-blue-400 mb-4">Screenshots</h2>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="bg-gray-800 p-4 rounded-lg">
-                    <p class="pb-2">Website Homepage</p>
-                    <img src="../image/Homepage-CV.png" alt="Screenshot 1" class="rounded-lg">
-                </div>
-                <div class="bg-gray-800 p-4 rounded-lg">
-                    <p class="pb-2">Website Project Dashboard</p>
-                    <img src="../image/Dashboard-cv.png" alt="Screenshot 2" class="rounded-lg">
-                </div>
+
+            </div>
+
+            <!-- Right Column: Images -->
+            <div class="space-y-12">
+                <!-- Project Screenshots or Media Section -->
+                <section>
+                    <h2 class="text-3xl font-bold text-blue-400 mb-4">Screenshots</h2>
+                    <div class="space-y-8">
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <p class="pb-2">Website Homepage</p>
+                            <img src="../image/Homepage-CV.png" alt="Screenshot 1" class="rounded-lg">
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <p class="pb-2">Website Project Dashboard</p>
+                            <img src="../image/Dashboard-cv.png" alt="Screenshot 2" class="rounded-lg">
+                        </div>
+                    </div>
+                </section>
+
+                                <!-- Project Links Section -->
+                <section>
+                    <h2 class="text-3xl font-bold text-blue-400 mb-4">Project Links</h2>
+                    <div class="flex flex-wrap gap-4 text-gray-300 leading-relaxed rounded-lg p-4">
+                        <a href="https://github.com/DavidMead182/DavidMead182.github.io" class="bg-gray-700 hover:bg-blue-600 text-white px-6 py-3 rounded-lg">GitHub Repository</a>
+                        <a href="https://DavidMead182.github.io/DavidMead.html" class="bg-gray-700 hover:bg-blue-600 text-white px-6 py-3 rounded-lg">Homepage</a>
+
+                    </div>
+                </section>
+
             </div>
         </div>
-    </section>
-
-    <!-- Project Technologies Section -->
-    <section class="py-16 px-6 bg-gray-800">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-blue-400 mb-4">Technologies Used</h2>
-            <div class="flex flex-wrap gap-4">
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">HTML</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">CSS</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">JavaScript</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Tailwind CSS</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Git</span>
-                <span class="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg">Github</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Links Section -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-blue-400 mb-4">Project Links</h2>
-            <div class="flex flex-wrap gap-4">
-                <a href="https://github.com/DavidMead182/DavidMead182.github.io" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg">GitHub Repository</a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="py-6 bg-gray-900 text-center">
